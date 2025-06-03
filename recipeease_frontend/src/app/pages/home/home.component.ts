@@ -66,7 +66,7 @@ export class HomeComponent implements OnInit {
   searchQuery = '';
   recipes$!: Observable<Recipe[]>;
 
-  constructor(private readonly _recipeService: RecipeService) {}
+  constructor(private readonly recipeService: RecipeService) {}
 
   ngOnInit(): void {
     this.loadRecipes();
@@ -85,6 +85,6 @@ export class HomeComponent implements OnInit {
   }
 
   handleFavoriteToggle(recipe: Recipe): void {
-    this._recipeService.toggleFavorite(recipe.id);
+    this.recipeService.toggleFavorite(recipe.id);
   }
 }
