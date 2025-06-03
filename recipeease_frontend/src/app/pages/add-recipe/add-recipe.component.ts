@@ -108,7 +108,9 @@ import { ReactiveFormsModule, FormBuilder, FormGroup, FormArray, Validators } fr
 export class AddRecipeComponent implements OnInit {
   recipeForm!: FormGroup;
 
+  /* eslint-disable no-unused-vars */
   constructor(private readonly formBuilder: FormBuilder) {}
+  /* eslint-enable no-unused-vars */
 
   ngOnInit(): void {
     this.initForm();
