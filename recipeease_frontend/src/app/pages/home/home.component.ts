@@ -66,7 +66,9 @@ export class HomeComponent implements OnInit {
   searchQuery = '';
   recipes$!: Observable<Recipe[]>;
 
+  /* eslint-disable no-unused-vars */
   constructor(private readonly recipeService: RecipeService) {}
+  /* eslint-enable no-unused-vars */
 
   ngOnInit(): void {
     this.loadRecipes();
