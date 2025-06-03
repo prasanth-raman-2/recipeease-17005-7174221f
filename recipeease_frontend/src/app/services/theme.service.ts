@@ -11,16 +11,21 @@ export class ThemeService {
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {
     if (isPlatformBrowser(this.platformId)) {
-      // Check user's preferred color scheme
-      if (window?.matchMedia?.('(prefers-color-scheme: dark)')?.matches) {
-        this.setDarkTheme(true);
-      }
+      this.checkSystemPreference();
     }
   }
 
-  setDarkTheme(isDark: boolean) {
+  private checkSystemPreference(): void {
+    const prefersDark = typeof window !== 'undefined' && 
+      window?.matchMedia?.('(prefers-color-scheme: dark)')?.matches;
+    if (prefersDark) {
+      this.setDarkTheme(true);
+    }
+  }
+
+  setDarkTheme(isDark: boolean): void {
     this.isDarkTheme.next(isDark);
-    if (isPlatformBrowser(this.platformId)) {
+    if (isPlatformBrowser(this.platformId) && typeof document !== 'undefined') {
       if (isDark) {
         document.body.classList.add('dark-theme');
       } else {
@@ -29,7 +34,8 @@ export class ThemeService {
     }
   }
 
-  toggleTheme() {
-    this.setDarkTheme(!this.isDarkTheme.value);
+  toggleTheme(): void {
+    const currentValue = this.isDarkTheme.value;
+    this.setDarkTheme(!currentValue);
   }
 }
