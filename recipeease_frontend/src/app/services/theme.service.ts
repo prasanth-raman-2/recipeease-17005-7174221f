@@ -9,7 +9,7 @@ export class ThemeService {
   private isDarkTheme = new BehaviorSubject<boolean>(false);
   isDarkTheme$ = this.isDarkTheme.asObservable();
 
-  constructor(@Inject(PLATFORM_ID) private readonly _platformId: Object) {
+  constructor(@Inject(PLATFORM_ID) private readonly platformId: Object) {
     if (this.isBrowser) {
       this.initializeTheme();
     }

@@ -73,12 +73,12 @@ export class HomeComponent implements OnInit {
   }
 
   private loadRecipes(): void {
-    this.recipes$ = this._recipeService.getRecipes();
+    this.recipes$ = this.recipeService.getRecipes();
   }
 
   handleSearch(): void {
     if (this.searchQuery.trim()) {
-      this.recipes$ = this._recipeService.searchRecipes(this.searchQuery);
+      this.recipes$ = this.recipeService.searchRecipes(this.searchQuery);
     } else {
       this.loadRecipes();
     }

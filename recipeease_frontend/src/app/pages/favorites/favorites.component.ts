@@ -48,17 +48,17 @@ import { Observable } from 'rxjs';
 export class FavoritesComponent implements OnInit {
   favorites$!: Observable<Recipe[]>;
 
-  constructor(private readonly _recipeService: RecipeService) {}
+  constructor(private readonly recipeService: RecipeService) {}
 
   ngOnInit(): void {
     this.loadFavorites();
   }
 
   private loadFavorites(): void {
-    this.favorites$ = this._recipeService.getFavorites();
+    this.favorites$ = this.recipeService.getFavorites();
   }
 
   handleFavoriteToggle(recipe: Recipe): void {
-    this._recipeService.toggleFavorite(recipe.id);
+    this.recipeService.toggleFavorite(recipe.id);
   }
 }
