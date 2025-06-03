@@ -465,3 +465,25 @@ chunk-CRKB4EV4.mjs  | home-component |   9.73 kB |
 Application bundle generation complete. [0.357 seconds]
 
 Page reload sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names                |  Raw size
+main.js             | main                 |   7.97 kB | 
+
+Lazy chunk files    | Names                |  Raw size
+chunk-RCFYGBZL.js   | add-recipe-component |   6.81 kB | 
+
+
+Server bundles     
+Initial chunk files | Names                |  Raw size
+chunk-EUIUMYY7.mjs  | -                    |   8.41 kB | 
+server.mjs          | server               |   1.42 kB | 
+main.server.mjs     | main.server          | 831 bytes | 
+
+Lazy chunk files    | Names                |  Raw size
+chunk-UAPWR22O.mjs  | add-recipe-component |   6.85 kB | 
+
+Application bundle generation complete. [0.262 seconds]
+
+Page reload sent to client(s).

@@ -11,7 +11,7 @@ import { ReactiveFormsModule, FormBuilder, FormGroup, FormArray, Validators } fr
     <div class="add-recipe-container">
       <h2>Add New Recipe</h2>
       
-      <form [formGroup]="recipeForm" class="recipe-form card" (ngSubmit)="onSubmit()">
+      <form [formGroup]="recipeForm" class="recipe-form card" (ngSubmit)="handleSubmit()">
         <!-- Previous template content remains the same -->
       </form>
     </div>
@@ -21,22 +21,22 @@ import { ReactiveFormsModule, FormBuilder, FormGroup, FormArray, Validators } fr
 export class AddRecipeComponent implements OnInit {
   recipeForm!: FormGroup;
 
-  constructor(private readonly fb: FormBuilder) {}
+  constructor(private readonly _formBuilder: FormBuilder) {}
 
   ngOnInit(): void {
     this.initForm();
   }
 
   private initForm(): void {
-    this.recipeForm = this.fb.group({
+    this.recipeForm = this._formBuilder.group({
       name: ['', Validators.required],
       description: ['', Validators.required],
       preparationTime: [0, [Validators.required, Validators.min(0)]],
       cookingTime: [0, [Validators.required, Validators.min(0)]],
       servings: [1, [Validators.required, Validators.min(1)]],
-      ingredients: this.fb.array([]),
-      instructions: this.fb.array([]),
-      nutritionalInfo: this.fb.group({
+      ingredients: this._formBuilder.array([]),
+      instructions: this._formBuilder.array([]),
+      nutritionalInfo: this._formBuilder.group({
         calories: [0, [Validators.required, Validators.min(0)]],
         protein: [0, [Validators.required, Validators.min(0)]],
         carbs: [0, [Validators.required, Validators.min(0)]],
@@ -57,7 +57,7 @@ export class AddRecipeComponent implements OnInit {
   }
 
   addIngredient(): void {
-    const ingredientGroup = this.fb.group({
+    const ingredientGroup = this._formBuilder.group({
       name: ['', Validators.required],
       amount: [0, [Validators.required, Validators.min(0)]],
       unit: ['', Validators.required]
@@ -70,14 +70,14 @@ export class AddRecipeComponent implements OnInit {
   }
 
   addInstruction(): void {
-    this.instructions.push(this.fb.control('', Validators.required));
+    this.instructions.push(this._formBuilder.control('', Validators.required));
   }
 
   removeInstruction(index: number): void {
     this.instructions.removeAt(index);
   }
 
-  onSubmit(): void {
+  handleSubmit(): void {
     if (this.recipeForm.valid) {
       console.log(this.recipeForm.value);
       // TODO: Implement recipe submission
