@@ -36,3 +36,18 @@ styles.css          | styles |  2.89 kB |
 Application bundle generation complete. [0.031 seconds]
 
 Page reload sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       |  Raw size
+main.js             | main        |   4.96 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       |  Raw size
+chunk-4BU52NSZ.mjs  | -           |   5.40 kB | 
+server.mjs          | server      |   1.39 kB | 
+main.server.mjs     | main.server | 800 bytes | 
+
+Application bundle generation complete. [0.413 seconds]
+
