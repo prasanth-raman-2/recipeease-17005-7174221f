@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RecipeService } from '../../services/recipe.service';
 import { Recipe } from '../../models/recipe.model';
@@ -45,10 +45,16 @@ import { Observable } from 'rxjs';
   `,
   styleUrl: './favorites.component.css'
 })
-export class FavoritesComponent {
-  favorites$: Observable<Recipe[]>;
+export class FavoritesComponent implements OnInit {
+  favorites$!: Observable<Recipe[]>;
 
-  constructor(private recipeService: RecipeService) {
+  constructor(private readonly recipeService: RecipeService) {}
+
+  ngOnInit(): void {
+    this.loadFavorites();
+  }
+
+  private loadFavorites(): void {
     this.favorites$ = this.recipeService.getFavorites();
   }
 
