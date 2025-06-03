@@ -1,0 +1,42 @@
+.app-container {
+  min-height: 100vh;
+  padding-bottom: var(--bottom-nav-height);
+  background-color: var(--background-color);
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-unit);
+}
+
+.bottom-nav {
+  background-color: var(--surface-color);
+  border-top: 1px solid var(--border-color);
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: calc(var(--spacing-unit) * 1.5);
+  color: var(--text-primary);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.nav-item:hover {
+  color: var(--primary-color);
+}
+
+.nav-item i {
+  font-size: 24px;
+  margin-bottom: calc(var(--spacing-unit) / 2);
+}
+
+.nav-item span {
+  font-size: 12px;
+}

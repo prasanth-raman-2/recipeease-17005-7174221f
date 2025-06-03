@@ -51,3 +51,5 @@ main.server.mjs     | main.server | 800 bytes |
 
 Application bundle generation complete. [0.413 seconds]
 
+9:39:39 AM [vite] (ssr) ✨ new dependencies optimized: rxjs
+9:39:39 AM [vite] (ssr) ✨ optimized dependencies changed. reloading
