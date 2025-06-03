@@ -16,7 +16,7 @@ export class ThemeService {
   }
 
   private get isBrowser(): boolean {
-    return isPlatformBrowser(this._platformId);
+    return isPlatformBrowser(this.platformId);
   }
 
   private initializeTheme(): void {
