@@ -48,7 +48,9 @@ import { Observable } from 'rxjs';
 export class FavoritesComponent implements OnInit {
   favorites$!: Observable<Recipe[]>;
 
+  /* eslint-disable no-unused-vars */
   constructor(private readonly recipeService: RecipeService) {}
+  /* eslint-enable no-unused-vars */
 
   ngOnInit(): void {
     this.loadFavorites();
