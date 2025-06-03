@@ -342,3 +342,44 @@ Page reload sent to client(s).
 9:42:37 AM [vite] (ssr) ✨ new dependencies optimized: @angular/forms
 9:42:37 AM [vite] (ssr) ✨ optimized dependencies changed. reloading
 ❯ Changes detected. Rebuilding...
+ERROR RuntimeError: NG0203: inject() must be called from an injection context such as a constructor, a factory function, a field initializer, or a function used with `runInInjectionContext`. Find more at https://angular.dev/errors/NG0203
+    at injectInjectorOnly (/home/kavia/workspace/code-generation/recipeease-17005-7174221f/recipeease_frontend/.angular/cache/19.2.1/angular/vite/deps_ssr/chunk-K6L7TLVU.js:2458:11)
+    at ɵɵinject (/home/kavia/workspace/code-generation/recipeease-17005-7174221f/recipeease_frontend/.angular/cache/19.2.1/angular/vite/deps_ssr/chunk-K6L7TLVU.js:2468:59)
+    at Object.factory (/home/kavia/workspace/code-generation/recipeease-17005-7174221f/recipeease_frontend/.angular/cache/19.2.1/angular/vite/deps_ssr/chunk-K6L7TLVU.js:13867:45)
+    at eval (/home/kavia/workspace/code-generation/recipeease-17005-7174221f/recipeease_frontend/.angular/cache/19.2.1/angular/vite/deps_ssr/chunk-K6L7TLVU.js:3177:35)
+    at runInInjectorProfilerContext (/home/kavia/workspace/code-generation/recipeease-17005-7174221f/recipeease_frontend/.angular/cache/19.2.1/angular/vite/deps_ssr/chunk-K6L7TLVU.js:2334:5)
+    at R3Injector.hydrate (/home/kavia/workspace/code-generation/recipeease-17005-7174221f/recipeease_frontend/.angular/cache/19.2.1/angular/vite/deps_ssr/chunk-K6L7TLVU.js:3176:11)
+    at R3Injector.get (/home/kavia/workspace/code-generation/recipeease-17005-7174221f/recipeease_frontend/.angular/cache/19.2.1/angular/vite/deps_ssr/chunk-K6L7TLVU.js:3071:23)
+    at Object.def.getStandaloneInjector (/home/kavia/workspace/code-generation/recipeease-17005-7174221f/recipeease_frontend/.angular/cache/19.2.1/angular/vite/deps_ssr/chunk-K6L7TLVU.js:13888:31)
+    at createRootViewInjector (/home/kavia/workspace/code-generation/recipeease-17005-7174221f/recipeease_frontend/.angular/cache/19.2.1/angular/vite/deps_ssr/chunk-K6L7TLVU.js:12647:44)
+    at ComponentFactory.create (/home/kavia/workspace/code-generation/recipeease-17005-7174221f/recipeease_frontend/.angular/cache/19.2.1/angular/vite/deps_ssr/chunk-K6L7TLVU.js:12714:32) {
+  code: -203
+}
+ERROR RuntimeError: NG0203: inject() must be called from an injection context such as a constructor, a factory function, a field initializer, or a function used with `runInInjectionContext`. Find more at https://angular.dev/errors/NG0203
+    at injectInjectorOnly (/home/kavia/workspace/code-generation/recipeease-17005-7174221f/recipeease_frontend/.angular/cache/19.2.1/angular/vite/deps_ssr/chunk-K6L7TLVU.js:2458:11)
+    at ɵɵinject (/home/kavia/workspace/code-generation/recipeease-17005-7174221f/recipeease_frontend/.angular/cache/19.2.1/angular/vite/deps_ssr/chunk-K6L7TLVU.js:2468:59)
+    at Object.factory (/home/kavia/workspace/code-generation/recipeease-17005-7174221f/recipeease_frontend/.angular/cache/19.2.1/angular/vite/deps_ssr/chunk-K6L7TLVU.js:13867:45)
+    at eval (/home/kavia/workspace/code-generation/recipeease-17005-7174221f/recipeease_frontend/.angular/cache/19.2.1/angular/vite/deps_ssr/chunk-K6L7TLVU.js:3177:35)
+    at runInInjectorProfilerContext (/home/kavia/workspace/code-generation/recipeease-17005-7174221f/recipeease_frontend/.angular/cache/19.2.1/angular/vite/deps_ssr/chunk-K6L7TLVU.js:2334:5)
+    at R3Injector.hydrate (/home/kavia/workspace/code-generation/recipeease-17005-7174221f/recipeease_frontend/.angular/cache/19.2.1/angular/vite/deps_ssr/chunk-K6L7TLVU.js:3176:11)
+    at R3Injector.get (/home/kavia/workspace/code-generation/recipeease-17005-7174221f/recipeease_frontend/.angular/cache/19.2.1/angular/vite/deps_ssr/chunk-K6L7TLVU.js:3071:23)
+    at Object.def.getStandaloneInjector (/home/kavia/workspace/code-generation/recipeease-17005-7174221f/recipeease_frontend/.angular/cache/19.2.1/angular/vite/deps_ssr/chunk-K6L7TLVU.js:13888:31)
+    at createRootViewInjector (/home/kavia/workspace/code-generation/recipeease-17005-7174221f/recipeease_frontend/.angular/cache/19.2.1/angular/vite/deps_ssr/chunk-K6L7TLVU.js:12647:44)
+    at ComponentFactory.create (/home/kavia/workspace/code-generation/recipeease-17005-7174221f/recipeease_frontend/.angular/cache/19.2.1/angular/vite/deps_ssr/chunk-K6L7TLVU.js:12714:32) {
+  code: -203
+}
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       |  Raw size
+main.js             | main        |   7.61 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       |  Raw size
+chunk-NXHDBROX.mjs  | -           |   8.05 kB | 
+server.mjs          | server      |   1.42 kB | 
+main.server.mjs     | main.server | 831 bytes | 
+
+Application bundle generation complete. [1.697 seconds]
+
+Page reload sent to client(s).
