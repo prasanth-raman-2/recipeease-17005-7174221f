@@ -9,27 +9,32 @@ export class ThemeService {
   private isDarkTheme = new BehaviorSubject<boolean>(false);
   isDarkTheme$ = this.isDarkTheme.asObservable();
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+  constructor(@Inject(PLATFORM_ID) private readonly platformId: Object) {
     if (isPlatformBrowser(this.platformId)) {
-      this.checkSystemPreference();
+      this.initializeTheme();
     }
   }
 
-  private checkSystemPreference(): void {
-    const prefersDark = typeof window !== 'undefined' && 
-      window?.matchMedia?.('(prefers-color-scheme: dark)')?.matches;
-    if (prefersDark) {
-      this.setDarkTheme(true);
+  private initializeTheme(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      const prefersDark = typeof window !== 'undefined' &&
+        window?.matchMedia?.('(prefers-color-scheme: dark)')?.matches;
+      if (prefersDark) {
+        this.setDarkTheme(true);
+      }
     }
   }
 
   setDarkTheme(isDark: boolean): void {
     this.isDarkTheme.next(isDark);
-    if (isPlatformBrowser(this.platformId) && typeof document !== 'undefined') {
-      if (isDark) {
-        document.body.classList.add('dark-theme');
-      } else {
-        document.body.classList.remove('dark-theme');
+    if (isPlatformBrowser(this.platformId)) {
+      const body = typeof document !== 'undefined' ? document.body : null;
+      if (body) {
+        if (isDark) {
+          body.classList.add('dark-theme');
+        } else {
+          body.classList.remove('dark-theme');
+        }
       }
     }
   }

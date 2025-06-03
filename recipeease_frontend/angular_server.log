@@ -304,3 +304,41 @@ Application bundle generation failed. [0.415 seconds]
          ╵          ~~~~~~~~~~~~~~
 
 
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles     
+Initial chunk files  | Names                |  Raw size
+polyfills.js         | polyfills            |  90.20 kB | 
+main.js              | main                 |   7.51 kB | 
+styles.css           | styles               |   2.89 kB | 
+chunk-YQOESBWP.js    | -                    | 754 bytes | 
+
+                     | Initial total        | 101.35 kB
+
+Lazy chunk files     | Names                |  Raw size
+chunk-C3WSKCD6.js    | home-component       |   9.72 kB | 
+chunk-ULNAZQWL.js    | add-recipe-component |   6.71 kB | 
+chunk-THWBQWCT.js    | favorites-component  |   5.68 kB | 
+chunk-O3HQH6QA.js    | -                    |   2.40 kB | 
+
+
+Server bundles      
+Initial chunk files  | Names                |  Raw size
+polyfills.server.mjs | polyfills.server     | 572.91 kB | 
+chunk-YMOSRM3Q.mjs   | -                    |   7.95 kB | 
+server.mjs           | server               |   1.42 kB | 
+main.server.mjs      | main.server          | 831 bytes | 
+chunk-FFILDKJJ.mjs   | -                    | 788 bytes | 
+
+Lazy chunk files     | Names                |  Raw size
+chunk-4IBU5PQX.mjs   | home-component       |   9.76 kB | 
+chunk-LWMLBZEC.mjs   | add-recipe-component |   6.74 kB | 
+chunk-AWT6R23Q.mjs   | favorites-component  |   5.72 kB | 
+chunk-4UY4JSEX.mjs   | -                    |   2.44 kB | 
+
+Application bundle generation complete. [0.442 seconds]
+
+Page reload sent to client(s).
+9:42:37 AM [vite] (ssr) ✨ new dependencies optimized: @angular/forms
+9:42:37 AM [vite] (ssr) ✨ optimized dependencies changed. reloading
+❯ Changes detected. Rebuilding...
