@@ -18,7 +18,7 @@ import { Observable } from 'rxjs';
             <div class="recipe-image" [style.background-image]="'url(' + recipe.imageUrl + ')'">
               <button 
                 class="favorite-button active"
-                (click)="toggleFavorite(recipe)"
+                (click)="handleFavoriteToggle(recipe)"
               >
                 <i class="material-icons">favorite</i>
               </button>
@@ -48,17 +48,17 @@ import { Observable } from 'rxjs';
 export class FavoritesComponent implements OnInit {
   favorites$!: Observable<Recipe[]>;
 
-  constructor(private readonly recipeService: RecipeService) {}
+  constructor(private readonly _recipeService: RecipeService) {}
 
   ngOnInit(): void {
     this.loadFavorites();
   }
 
   private loadFavorites(): void {
-    this.favorites$ = this.recipeService.getFavorites();
+    this.favorites$ = this._recipeService.getFavorites();
   }
 
-  toggleFavorite(recipe: Recipe): void {
-    this.recipeService.toggleFavorite(recipe.id);
+  handleFavoriteToggle(recipe: Recipe): void {
+    this._recipeService.toggleFavorite(recipe.id);
   }
 }
