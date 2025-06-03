@@ -66,14 +66,24 @@ export class HomeComponent implements OnInit {
   searchQuery = '';
   recipes$!: Observable<Recipe[]>;
 
-  constructor(private recipeService: RecipeService) {}
+  constructor(private readonly recipeService: RecipeService) {
+    this.recipes$ = this.recipeService.getRecipes();
+  }
 
   ngOnInit(): void {
+    this.loadRecipes();
+  }
+
+  private loadRecipes(): void {
     this.recipes$ = this.recipeService.getRecipes();
   }
 
   onSearch(): void {
-    this.recipes$ = this.recipeService.searchRecipes(this.searchQuery);
+    if (this.searchQuery.trim()) {
+      this.recipes$ = this.recipeService.searchRecipes(this.searchQuery);
+    } else {
+      this.loadRecipes();
+    }
   }
 
   toggleFavorite(recipe: Recipe): void {
