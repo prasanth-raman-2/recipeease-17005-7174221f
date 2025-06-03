@@ -39,10 +39,12 @@ export class AppComponent implements OnInit, OnDestroy {
   isDarkTheme = false;
   private themeSubscription?: Subscription;
 
+  /* eslint-disable no-unused-vars */
   constructor(
     private readonly themeService: ThemeService,
     private readonly router: Router
   ) {}
+  /* eslint-enable no-unused-vars */
 
   ngOnInit(): void {
     this.themeSubscription = this.themeService.isDarkTheme$.subscribe(
