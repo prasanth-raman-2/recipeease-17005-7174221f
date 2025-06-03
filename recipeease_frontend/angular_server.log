@@ -53,3 +53,87 @@ Application bundle generation complete. [0.413 seconds]
 
 9:39:39 AM [vite] (ssr) ✨ new dependencies optimized: rxjs
 9:39:39 AM [vite] (ssr) ✨ optimized dependencies changed. reloading
+Page reload sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       |  Raw size
+main.js             | main        |   5.97 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       |  Raw size
+chunk-4B26LGBR.mjs  | -           |   6.41 kB | 
+server.mjs          | server      |   1.39 kB | 
+main.server.mjs     | main.server | 800 bytes | 
+
+Application bundle generation complete. [0.215 seconds]
+
+Page reload sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.231 seconds]
+
+✘ [ERROR] Could not resolve "./pages/home/home.component"
+
+    src/app/app.routes.ts:9:36:
+      9 │ ...ent: () => import('./pages/home/home.component').then(m => m.Hom...
+        ╵                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2307: Cannot find module './pages/home/home.component' or its corresponding type declarations. [plugin angular-compiler]
+
+    src/app/app.routes.ts:11:32:
+      11 │ ...nt: () => import('./pages/home/home.component').then(m => m.Hom...
+         ╵                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] Could not resolve "./pages/favorites/favorites.component"
+
+    src/app/app.routes.ts:13:36:
+      13 │ ...) => import('./pages/favorites/favorites.component').then(m => ...
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2307: Cannot find module './pages/favorites/favorites.component' or its corresponding type declarations. [plugin angular-compiler]
+
+    src/app/app.routes.ts:15:32:
+      15 │ ...) => import('./pages/favorites/favorites.component').then(m => ...
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] Could not resolve "./pages/add-recipe/add-recipe.component"
+
+    src/app/app.routes.ts:17:36:
+      17 │ ... => import('./pages/add-recipe/add-recipe.component').then(m =>...
+         ╵               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2307: Cannot find module './pages/add-recipe/add-recipe.component' or its corresponding type declarations. [plugin angular-compiler]
+
+    src/app/app.routes.ts:19:32:
+      19 │ ... => import('./pages/add-recipe/add-recipe.component').then(m =>...
+         ╵               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] Could not resolve "./pages/home/home.component"
+
+    src/app/app.routes.ts:9:36:
+      9 │ ...ent: () => import('./pages/home/home.component').then(m => m.Hom...
+        ╵                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] Could not resolve "./pages/favorites/favorites.component"
+
+    src/app/app.routes.ts:13:36:
+      13 │ ...) => import('./pages/favorites/favorites.component').then(m => ...
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] Could not resolve "./pages/add-recipe/add-recipe.component"
+
+    src/app/app.routes.ts:17:36:
+      17 │ ... => import('./pages/add-recipe/add-recipe.component').then(m =>...
+         ╵               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
