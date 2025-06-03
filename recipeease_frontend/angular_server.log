@@ -286,3 +286,21 @@ Application bundle generation failed. [0.003 seconds]
          ╵               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.415 seconds]
+
+✘ [ERROR] TS2339: Property 'addIngredient' does not exist on type 'AddRecipeComponent'. [plugin angular-compiler]
+
+    src/app/pages/add-recipe/add-recipe.component.ts:42:9:
+      42 │     this.addIngredient();
+         ╵          ~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2339: Property 'addInstruction' does not exist on type 'AddRecipeComponent'. [plugin angular-compiler]
+
+    src/app/pages/add-recipe/add-recipe.component.ts:43:9:
+      43 │     this.addInstruction();
+         ╵          ~~~~~~~~~~~~~~
+
+

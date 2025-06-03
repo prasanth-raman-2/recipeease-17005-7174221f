@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { RouterOutlet, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { ThemeService } from './services/theme.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -34,16 +35,23 @@ import { ThemeService } from './services/theme.service';
   `,
   styleUrl: './app.component.css'
 })
-export class AppComponent {
+export class AppComponent implements OnInit, OnDestroy {
   isDarkTheme = false;
+  private themeSubscription?: Subscription;
 
   constructor(
-    private themeService: ThemeService,
-    private router: Router
-  ) {
-    this.themeService.isDarkTheme$.subscribe(
+    private readonly themeService: ThemeService,
+    private readonly router: Router
+  ) {}
+
+  ngOnInit(): void {
+    this.themeSubscription = this.themeService.isDarkTheme$.subscribe(
       isDark => this.isDarkTheme = isDark
     );
+  }
+
+  ngOnDestroy(): void {
+    this.themeSubscription?.unsubscribe();
   }
 
   navigate(route: string): void {
