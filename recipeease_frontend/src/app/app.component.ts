@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterOutlet, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { ThemeService } from './services/theme.service';
 
@@ -26,7 +26,7 @@ import { ThemeService } from './services/theme.service';
           <i class="material-icons">add</i>
           <span>Add Recipe</span>
         </button>
-        <button class="nav-item" (click)="toggleTheme()">
+        <button class="nav-item" (click)="onThemeToggle()">
           <i class="material-icons">{{ isDarkTheme ? 'light_mode' : 'dark_mode' }}</i>
         </button>
       </nav>
@@ -37,17 +37,20 @@ import { ThemeService } from './services/theme.service';
 export class AppComponent {
   isDarkTheme = false;
 
-  constructor(private themeService: ThemeService) {
+  constructor(
+    private themeService: ThemeService,
+    private router: Router
+  ) {
     this.themeService.isDarkTheme$.subscribe(
       isDark => this.isDarkTheme = isDark
     );
   }
 
   navigate(route: string): void {
-    // TODO: Implement navigation
+    void this.router.navigate([route]);
   }
 
-  toggleTheme(): void {
+  onThemeToggle(): void {
     this.themeService.toggleTheme();
   }
 }
