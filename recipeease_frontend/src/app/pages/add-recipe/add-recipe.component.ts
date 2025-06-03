@@ -21,7 +21,7 @@ import { ReactiveFormsModule, FormBuilder, FormGroup, FormArray, Validators } fr
 export class AddRecipeComponent implements OnInit {
   recipeForm!: FormGroup;
 
-  constructor(private readonly _formBuilder: FormBuilder) {}
+  constructor(private readonly formBuilder: FormBuilder) {}
 
   ngOnInit(): void {
     this.initForm();

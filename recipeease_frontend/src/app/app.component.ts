@@ -40,12 +40,12 @@ export class AppComponent implements OnInit, OnDestroy {
   private themeSubscription?: Subscription;
 
   constructor(
-    private readonly _themeService: ThemeService,
-    private readonly _router: Router
+    private readonly themeService: ThemeService,
+    private readonly router: Router
   ) {}
 
   ngOnInit(): void {
-    this.themeSubscription = this._themeService.isDarkTheme$.subscribe(
+    this.themeSubscription = this.themeService.isDarkTheme$.subscribe(
       isDark => this.isDarkTheme = isDark
     );
   }
@@ -55,10 +55,10 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   handleNavigation(route: string): void {
-    void this._router.navigate([route]);
+    void this.router.navigate([route]);
   }
 
   onThemeToggle(): void {
-    this._themeService.toggleTheme();
+    this.themeService.toggleTheme();
   }
 }
