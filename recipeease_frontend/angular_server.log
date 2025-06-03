@@ -383,3 +383,25 @@ main.server.mjs     | main.server | 831 bytes |
 Application bundle generation complete. [1.697 seconds]
 
 Page reload sent to client(s).
+9:42:44 AM [vite] (client) ✨ new dependencies optimized: @angular/common, rxjs, @angular/forms
+9:42:44 AM [vite] (client) ✨ optimized dependencies changed. reloading
+The file does not exist at "/home/kavia/workspace/code-generation/recipeease-17005-7174221f/recipeease_frontend/.angular/cache/19.2.1/angular/vite/deps/chunk-QKOSJ7JN.js?v=c461838e" which is in the optimize deps directory. The dependency might be incompatible with the dep optimizer. Try adding it to `optimizeDeps.exclude`.
+The file does not exist at "/home/kavia/workspace/code-generation/recipeease-17005-7174221f/recipeease_frontend/.angular/cache/19.2.1/angular/vite/deps/chunk-ICDOO44F.js?v=c461838e" which is in the optimize deps directory. The dependency might be incompatible with the dep optimizer. Try adding it to `optimizeDeps.exclude`.
+The file does not exist at "/home/kavia/workspace/code-generation/recipeease-17005-7174221f/recipeease_frontend/.angular/cache/19.2.1/angular/vite/deps/chunk-QKOSJ7JN.js?v=c461838e" which is in the optimize deps directory. The dependency might be incompatible with the dep optimizer. Try adding it to `optimizeDeps.exclude`.
+The file does not exist at "/home/kavia/workspace/code-generation/recipeease-17005-7174221f/recipeease_frontend/.angular/cache/19.2.1/angular/vite/deps/chunk-ICDOO44F.js?v=c461838e" which is in the optimize deps directory. The dependency might be incompatible with the dep optimizer. Try adding it to `optimizeDeps.exclude`.
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       |  Raw size
+main.js             | main        |   7.72 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       |  Raw size
+chunk-G6AVATNM.mjs  | -           |   8.16 kB | 
+server.mjs          | server      |   1.42 kB | 
+main.server.mjs     | main.server | 831 bytes | 
+
+Application bundle generation complete. [0.235 seconds]
+
+Page reload sent to client(s).

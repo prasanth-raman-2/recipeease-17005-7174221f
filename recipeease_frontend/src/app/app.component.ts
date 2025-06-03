@@ -9,21 +9,21 @@ import { Subscription } from 'rxjs';
   standalone: true,
   imports: [RouterOutlet, CommonModule],
   template: `
-    <div class="app-container">
+    <div class="app-container" [class.dark-theme]="isDarkTheme">
       <main>
         <router-outlet></router-outlet>
       </main>
       
       <nav class="bottom-nav">
-        <button class="nav-item" (click)="navigate('home')">
+        <button class="nav-item" (click)="handleNavigation('home')">
           <i class="material-icons">home</i>
           <span>Home</span>
         </button>
-        <button class="nav-item" (click)="navigate('favorites')">
+        <button class="nav-item" (click)="handleNavigation('favorites')">
           <i class="material-icons">favorite</i>
           <span>Favorites</span>
         </button>
-        <button class="nav-item" (click)="navigate('add')">
+        <button class="nav-item" (click)="handleNavigation('add')">
           <i class="material-icons">add</i>
           <span>Add Recipe</span>
         </button>
@@ -40,12 +40,12 @@ export class AppComponent implements OnInit, OnDestroy {
   private themeSubscription?: Subscription;
 
   constructor(
-    private readonly themeService: ThemeService,
-    private readonly router: Router
+    private readonly _themeService: ThemeService,
+    private readonly _router: Router
   ) {}
 
   ngOnInit(): void {
-    this.themeSubscription = this.themeService.isDarkTheme$.subscribe(
+    this.themeSubscription = this._themeService.isDarkTheme$.subscribe(
       isDark => this.isDarkTheme = isDark
     );
   }
@@ -54,11 +54,11 @@ export class AppComponent implements OnInit, OnDestroy {
     this.themeSubscription?.unsubscribe();
   }
 
-  navigate(route: string): void {
-    void this.router.navigate([route]);
+  handleNavigation(route: string): void {
+    void this._router.navigate([route]);
   }
 
   onThemeToggle(): void {
-    this.themeService.toggleTheme();
+    this._themeService.toggleTheme();
   }
 }
