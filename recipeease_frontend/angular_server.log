@@ -264,3 +264,25 @@ Application bundle generation failed. [0.209 seconds]
          ╵               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.013 seconds]
+
+✘ [ERROR] TS2307: Cannot find module './pages/add-recipe/add-recipe.component' or its corresponding type declarations. [plugin angular-compiler]
+
+    src/app/app.routes.ts:19:32:
+      19 │ ... => import('./pages/add-recipe/add-recipe.component').then(m =>...
+         ╵               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.003 seconds]
+
+✘ [ERROR] TS2307: Cannot find module './pages/add-recipe/add-recipe.component' or its corresponding type declarations. [plugin angular-compiler]
+
+    src/app/app.routes.ts:19:32:
+      19 │ ... => import('./pages/add-recipe/add-recipe.component').then(m =>...
+         ╵               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
