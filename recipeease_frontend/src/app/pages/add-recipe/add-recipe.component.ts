@@ -28,15 +28,15 @@ export class AddRecipeComponent implements OnInit {
   }
 
   private initForm(): void {
-    this.recipeForm = this._formBuilder.group({
+    this.recipeForm = this.formBuilder.group({
       name: ['', Validators.required],
       description: ['', Validators.required],
       preparationTime: [0, [Validators.required, Validators.min(0)]],
       cookingTime: [0, [Validators.required, Validators.min(0)]],
       servings: [1, [Validators.required, Validators.min(1)]],
-      ingredients: this._formBuilder.array([]),
-      instructions: this._formBuilder.array([]),
-      nutritionalInfo: this._formBuilder.group({
+      ingredients: this.formBuilder.array([]),
+      instructions: this.formBuilder.array([]),
+      nutritionalInfo: this.formBuilder.group({
         calories: [0, [Validators.required, Validators.min(0)]],
         protein: [0, [Validators.required, Validators.min(0)]],
         carbs: [0, [Validators.required, Validators.min(0)]],
@@ -57,7 +57,7 @@ export class AddRecipeComponent implements OnInit {
   }
 
   addIngredient(): void {
-    const ingredientGroup = this._formBuilder.group({
+    const ingredientGroup = this.formBuilder.group({
       name: ['', Validators.required],
       amount: [0, [Validators.required, Validators.min(0)]],
       unit: ['', Validators.required]
@@ -70,7 +70,7 @@ export class AddRecipeComponent implements OnInit {
   }
 
   addInstruction(): void {
-    this.instructions.push(this._formBuilder.control('', Validators.required));
+    this.instructions.push(this.formBuilder.control('', Validators.required));
   }
 
   removeInstruction(index: number): void {
