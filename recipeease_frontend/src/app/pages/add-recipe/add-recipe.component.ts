@@ -12,7 +12,94 @@ import { ReactiveFormsModule, FormBuilder, FormGroup, FormArray, Validators } fr
       <h2>Add New Recipe</h2>
       
       <form [formGroup]="recipeForm" class="recipe-form card" (ngSubmit)="handleSubmit()">
-        <!-- Previous template content remains the same -->
+        <div class="form-group">
+          <label for="name">Recipe Name</label>
+          <input id="name" type="text" formControlName="name" class="input">
+        </div>
+
+        <div class="form-group">
+          <label for="description">Description</label>
+          <textarea id="description" formControlName="description" class="input textarea"></textarea>
+        </div>
+
+        <div class="cooking-info">
+          <div class="form-group">
+            <label for="preparationTime">Prep Time (mins)</label>
+            <input id="preparationTime" type="number" formControlName="preparationTime" class="input">
+          </div>
+
+          <div class="form-group">
+            <label for="cookingTime">Cook Time (mins)</label>
+            <input id="cookingTime" type="number" formControlName="cookingTime" class="input">
+          </div>
+
+          <div class="form-group">
+            <label for="servings">Servings</label>
+            <input id="servings" type="number" formControlName="servings" class="input">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Ingredients</label>
+          <div class="ingredients-list" formArrayName="ingredients">
+            @for (ingredient of ingredients.controls; track $index) {
+              <div [formGroupName]="$index" class="ingredient-item">
+                <input formControlName="name" placeholder="Ingredient" class="input">
+                <input type="number" formControlName="amount" placeholder="Amount" class="input">
+                <input formControlName="unit" placeholder="Unit" class="input">
+                <button type="button" class="remove-button" (click)="removeIngredient($index)">
+                  <i class="material-icons">remove</i>
+                </button>
+              </div>
+            }
+          </div>
+          <button type="button" class="button add-button" (click)="addIngredient()">
+            <i class="material-icons">add</i> Add Ingredient
+          </button>
+        </div>
+
+        <div class="form-group">
+          <label>Instructions</label>
+          <div class="instructions-list" formArrayName="instructions">
+            @for (instruction of instructions.controls; track $index) {
+              <div class="instruction-item">
+                <input [formControlName]="$index" placeholder="Step {{$index + 1}}" class="input">
+                <button type="button" class="remove-button" (click)="removeInstruction($index)">
+                  <i class="material-icons">remove</i>
+                </button>
+              </div>
+            }
+          </div>
+          <button type="button" class="button add-button" (click)="addInstruction()">
+            <i class="material-icons">add</i> Add Step
+          </button>
+        </div>
+
+        <div class="form-group">
+          <label>Nutritional Information</label>
+          <div class="nutrition-grid" formGroupName="nutritionalInfo">
+            <div class="form-group">
+              <label for="calories">Calories</label>
+              <input id="calories" type="number" formControlName="calories" class="input">
+            </div>
+            <div class="form-group">
+              <label for="protein">Protein (g)</label>
+              <input id="protein" type="number" formControlName="protein" class="input">
+            </div>
+            <div class="form-group">
+              <label for="carbs">Carbs (g)</label>
+              <input id="carbs" type="number" formControlName="carbs" class="input">
+            </div>
+            <div class="form-group">
+              <label for="fat">Fat (g)</label>
+              <input id="fat" type="number" formControlName="fat" class="input">
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="button submit-button" [disabled]="!recipeForm.valid">
+          Add Recipe
+        </button>
       </form>
     </div>
   `,
