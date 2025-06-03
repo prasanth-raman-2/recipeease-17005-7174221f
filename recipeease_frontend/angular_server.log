@@ -443,3 +443,25 @@ chunk-4UKXFJNR.mjs  | favorites-component |   5.74 kB |
 Application bundle generation complete. [0.211 seconds]
 
 Page reload sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names          |  Raw size
+main.js             | main           |   7.97 kB | 
+
+Lazy chunk files    | Names          |  Raw size
+chunk-NSDLMFO5.js   | home-component |   9.70 kB | 
+
+
+Server bundles     
+Initial chunk files | Names          |  Raw size
+chunk-XVPK4BNP.mjs  | -              |   8.41 kB | 
+server.mjs          | server         |   1.42 kB | 
+main.server.mjs     | main.server    | 831 bytes | 
+
+Lazy chunk files    | Names          |  Raw size
+chunk-CRKB4EV4.mjs  | home-component |   9.73 kB | 
+
+Application bundle generation complete. [0.357 seconds]
+
+Page reload sent to client(s).

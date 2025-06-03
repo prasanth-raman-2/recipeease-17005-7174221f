@@ -15,7 +15,7 @@ import { Observable } from 'rxjs';
         <input 
           type="text" 
           [(ngModel)]="searchQuery" 
-          (input)="onSearch()"
+          (input)="handleSearch()"
           placeholder="Search recipes..."
           class="search-input"
         >
@@ -27,7 +27,7 @@ import { Observable } from 'rxjs';
             <div class="recipe-image" [style.background-image]="'url(' + recipe.imageUrl + ')'">
               <button 
                 class="favorite-button"
-                (click)="toggleFavorite(recipe)"
+                (click)="handleFavoriteToggle(recipe)"
                 [class.active]="recipe.isFavorite"
               >
                 <i class="material-icons">{{ recipe.isFavorite ? 'favorite' : 'favorite_border' }}</i>
@@ -66,27 +66,25 @@ export class HomeComponent implements OnInit {
   searchQuery = '';
   recipes$!: Observable<Recipe[]>;
 
-  constructor(private readonly recipeService: RecipeService) {
-    this.recipes$ = this.recipeService.getRecipes();
-  }
+  constructor(private readonly _recipeService: RecipeService) {}
 
   ngOnInit(): void {
     this.loadRecipes();
   }
 
   private loadRecipes(): void {
-    this.recipes$ = this.recipeService.getRecipes();
+    this.recipes$ = this._recipeService.getRecipes();
   }
 
-  onSearch(): void {
+  handleSearch(): void {
     if (this.searchQuery.trim()) {
-      this.recipes$ = this.recipeService.searchRecipes(this.searchQuery);
+      this.recipes$ = this._recipeService.searchRecipes(this.searchQuery);
     } else {
       this.loadRecipes();
     }
   }
 
-  toggleFavorite(recipe: Recipe): void {
-    this.recipeService.toggleFavorite(recipe.id);
+  handleFavoriteToggle(recipe: Recipe): void {
+    this._recipeService.toggleFavorite(recipe.id);
   }
 }
